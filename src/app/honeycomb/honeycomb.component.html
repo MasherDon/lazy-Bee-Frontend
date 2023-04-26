@@ -1,0 +1,20 @@
+<div class="honeycomb" *ngIf="games">
+  <div *ngFor="let array of games; index as i" class="list">
+    <div *ngFor="let game of array; index as n" class="base">
+      <div class="hexagon" [ngClass]="{'hex-hover': !!game.image}" [style]="{bottom: setBottom(i,n)}" (mouseenter)="game.image?point.emit(true):{}"
+           (mouseleave)="game.image?generateRandom(i,n):{}" (click)="game.image?navigateGame(game.game):{}">
+        <div class="background-game" [style]="game.image?{'background-image': 'url(images/'+game.game+'/'+game.image+')'}:{background: 'linear-gradient(var(--orange), #f36744)'}">
+          <div class="glass" [style]="game.image?{'background-image': 'url(assets/images/glass_'+((i+1)*(n+1)%4)+'.png)'}:{}">
+            <div class="game" [style]="game.image?{'background-image': 'url(images/'+game.game+'/'+game.image+')'}:{background: 'linear-gradient(var(--orange), #f36744)'}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="drips" [style]="{bottom: setBottomDrip(i,n)}">
+        <div class="drip drip-2" [ngClass]="{'drip-hover': !!game.image}" [style]="{left: orientation?'1.4em':'1em', bottom: orientation?'':'0.3em'}"></div>
+        <div class="drip drip-3" [ngClass]="{'drip-hover': !!game.image}" [style]="{left: orientation?'3.9em':'3.6em', top: orientation?'1.2em':'0.3em'}"></div>
+        <div class="drip drip-1" [ngClass]="{'drip-hover': !!game.image}" [style]="{left: orientation?'5em':'4em', bottom: orientation?'':'0.3em'}"></div>
+      </div>
+    </div>
+  </div>
+</div>

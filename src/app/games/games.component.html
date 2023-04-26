@@ -1,0 +1,31 @@
+<div class="games" *ngIf="games">
+  <div *ngFor="let game of games; index as i" [id]="game.game" class="border" (mouseenter)="hideLogo(game.game)" [ngClass]="{'hex-hover': game.hover}">
+    <div class="hex">
+      <div class="game" *ngIf="game.hideLogo">
+        <div class="left" style="background-image: url('assets/images/lazyBee.png');">
+        </div>
+        <div class="right" style="background-image: url('assets/images/lazyBee.png');">
+        </div>
+      </div>
+      <div class="info" *ngIf="!game.hideLogo">
+        <div class="img">
+          <img [src]="game.image" [alt]="game.game">
+          <div class="links">
+            <a *ngIf="game.linkGoogle" [href]="game.linkGoogle">
+              <img src="assets/images/google.png" alt="" class="linkImage" (mouseenter)="game.image?point.emit(true):{}"
+                   (mouseleave)="game.image?point.emit(false):{}">
+            </a>
+            <a *ngIf="game.linkYandex" [href]="game.linkYandex">
+              <img src="assets/images/yandex.png" alt="" class="linkImage" (mouseenter)="game.image?point.emit(true):{}"
+                   (mouseleave)="game.image?point.emit(false):{}">
+            </a>
+          </div>
+        </div>
+        <div class="text font-Coiny">
+            <h1>{{ game.title }}</h1>
+            <div [innerHTML]="game.text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

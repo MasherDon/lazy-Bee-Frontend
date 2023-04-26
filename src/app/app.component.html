@@ -1,0 +1,9 @@
+<div id="beeArray">
+</div>
+<img [src]="image" alt="" *ngIf="orientation" class="cursor" [style.top]="top" [style.left]="left">
+<!--<img *ngFor="let array of bee; index as i" class="bee" src="assets/images/BeeFon.png" alt="">-->
+<div class="page">
+  <app-honeycomb id="honeycomb" (point)="point($event)" [games]="gamesService.getHoneycomb()"></app-honeycomb>
+  <app-about id="about" [about]="gamesService.getAbout()"></app-about>
+  <app-games id="games" (point)="point($event)" [games]="gamesService.getGames()"></app-games>
+</div>

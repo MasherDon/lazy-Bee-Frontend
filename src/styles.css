@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Coiny";
+  src: url("assets/fonts/Coiny-Regular.ttf");
+}
+
+.font-Coiny {
+  font-family: 'Coiny', cursive;
+}
+
+.cursor {
+  width: auto;
+  height: 3em;
+  position: absolute;
+  pointer-events: none;
+  z-index: 50;
+}
+
+:root {
+  --orange: #FF7100;
+  --yellow: #FFBF00;
+  --red: #FF4900;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  width: 100%;
+  background-image: url('assets/images/fon.png'), linear-gradient(to bottom, #FFCA86, #F36223);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+@media screen and (min-width:769px) {
+  .bee {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+@media screen and (max-device-width:480px) {
+  .bee {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+
+.bee {
+  position: fixed;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes _move_25 {
+  0% {
+    transform: translateX(0) rotate(0.75turn);
+  }
+  100% {
+    transform: translateX(calc(-100vw * 1.5)) rotate(0.75turn);
+  }
+}
+
+@keyframes _move_375 {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0.875turn);
+  }
+  100% {
+    transform: translateX(calc(-100vw * 1.5)) translateY(calc(-100vw * 1.5)) rotate(0.875turn);
+  }
+}
+
+@keyframes _move_125 {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0.625turn);
+  }
+  100% {
+    transform: translateX(calc(-100vw * 1.5)) translateY(calc(100vw * 1.5)) rotate(0.625turn);
+  }
+}
+
+@keyframes move_25 {
+  0% {
+    transform: translateX(0) rotate(0.25turn);
+  }
+  100% {
+    transform: translateX(calc(100vw * 1.5)) rotate(0.25turn);
+  }
+}
+
+@keyframes move_375 {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0.375turn);
+  }
+  100% {
+    transform: translateX(calc(100vw * 1.5)) translateY(calc(100vw * 1.5)) rotate(0.375turn);
+  }
+}
+
+@keyframes move_125 {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0.125turn);
+  }
+  100% {
+    transform: translateX(calc(100vw * 1.5)) translateY(calc(-100vw * 1.5)) rotate(0.125turn);
+  }
+}

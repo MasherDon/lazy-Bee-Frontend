@@ -1,0 +1,194 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bock-h1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.bock-h1 h1 {
+  font-weight: 500;
+  margin: 32px 0 0 0;
+  background-color: #264653;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 4px 4px var(--red);
+  z-index: 5;
+}
+
+.hex-gon {
+  background: #e9c46a;
+  clip-path: polygon(var(--hex) 0%, calc(100% - var(--hex)) 0%, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0% 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s linear;
+}
+
+.border-hex {
+  background: linear-gradient(to bottom right, #F4c95d, var(--yellow), #faa35c);
+  clip-path: polygon(var(--hex) 0%, calc(100% - var(--hex)) 0%, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0% 50%);
+  display: flex;
+  margin: 0 0 2em 0;
+  justify-content: center;
+  align-items: center;
+  transition: all 2s linear;
+}
+
+.text-hex {
+  width: 95%;
+  height: 95%;
+  color: #264653;
+}
+
+.smudges {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.smudge {
+  position: relative;
+  border-radius: 0 0 25px 25px;
+}
+
+.smudge-1 {
+  background: var(--red);
+}
+.smudge-2 {
+  background: var(--yellow);
+}
+.smudge-3 {
+  background: var(--yellow);
+}
+.smudge-4 {
+  background: var(--red);
+}
+.smudge-5 {
+  background: var(--yellow);
+}
+.smudge-6 {
+  background: var(--red);
+}
+.smudge-7 {
+  background: var(--red);
+}
+.smudge-8 {
+  background: var(--yellow);
+}
+.smudge-9 {
+  background: var(--red);
+}
+
+@media only screen and (orientation: landscape) {
+  .hex-gon {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%);
+    width: calc(100% - 8.4em);
+    height: 17.5em;
+  }
+  .border-hex {
+    width: 95%;
+    max-width: 70em;
+    height: 19em;
+  }
+  .text-hex {
+    font-size: 1.5em;
+  }
+  .about h1 {
+    font-size: 6em;
+  }
+  .smudge-1 {
+    height: 1em;
+    width: 0.5em;
+  }
+  .smudge-2 {
+    height: 1.5em;
+    width: 0.5em;
+  }
+  .smudge-3 {
+    height: 1.3em;
+    width: 0.8em;
+  }
+  .smudge-4 {
+    height: 0.7em;
+    width: 0.5em;
+  }
+  .smudge-5 {
+    height: 1.5em;
+    width: 0.8em;
+  }
+  .smudge-6 {
+    height: 0.7em;
+    width: 0.5em;
+  }
+  .smudge-7 {
+    height: 0.5em;
+    width: 0.5em;
+  }
+  .smudge-8 {
+    height: 1.2em;
+    width: 0.4em;
+  }
+  .smudge-9 {
+    height: 0.65em;
+    width: 0.5em;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .hex-gon {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%);
+    width: calc(100% - 5.4em);
+    height: 12em;
+  }
+  .border-hex {
+    width: 95%;
+    max-width: 70em;
+    height: 13em;
+  }
+  .about h1 {
+    font-size: 4em;
+  }
+  .text-hex {
+    font-size: 1em;
+  }
+  .smudge-1 {
+    height: 0.6em;
+    width: 0.3em;
+  }
+  .smudge-2 {
+    height: 1em;
+    width: 0.3em;
+  }
+  .smudge-3 {
+    height: 1em;
+    width: 0.4em;
+  }
+  .smudge-4 {
+    height: 0.7em;
+    width: 0.4em;
+  }
+  .smudge-5 {
+    height: 1.1em;
+    width: 0.5em;
+  }
+  .smudge-6 {
+    height: 1.2em;
+    width: 0.5em;
+  }
+  .smudge-7 {
+    height: 0.4em;
+    width: 0.5em;
+  }
+  .smudge-8 {
+    height: 0.6em;
+    width: 0.3em;
+  }
+  .smudge-9 {
+    height: 0.6em;
+    width: 0.4em;
+  }
+}

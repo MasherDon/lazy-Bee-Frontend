@@ -1,0 +1,162 @@
+.honeycomb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.bas {
+  width: 100%;
+  height: 100%;
+}
+
+.hexagon {
+  background: #ff8939;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100% ,100% 75%, 100% 25%, 50% 0%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.background-game {
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100% ,100% 75%, 100% 25%, 50% 0%);
+  width: 90%;
+  height: 90%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.glass {
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100% ,100% 75%, 100% 25%, 50% 0%);
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.game {
+  clip-path: circle(0% at center);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: clip-path var(--game--s) linear;
+}
+
+.hex-hover.hexagon:hover .game {
+  clip-path: circle(40% at center);
+  transition: clip-path var(--game-s) linear;
+}
+
+.drips {
+  display: flex;
+  position: relative;
+}
+
+.drip {
+  position: relative;
+  border-radius: 0 0 25px 25px;
+  height: 0;
+  z-index: 10;
+}
+
+.drip-1 {
+  clip-path: polygon(0% 0.70em, 100% 0%, 100% calc(100% - 30px), 100% calc(100% - 15px), 100% 100%, 0% 100%, 0% calc(100% - 15px), 0% calc(100% - 30px));
+  background: linear-gradient(0.48turn, #ffff1a 50%, #ff9704);
+  transition: height var(--drip-1--s) linear, clip-path var(--drip-1-s) linear;
+}
+.drip-2 {
+  clip-path: polygon(0% 0%, 100% 0.70em, 100% calc(100% - 30px), 100% calc(100% - 15px), 100% 100%, 0% 100%, 0% calc(100% - 15px), 0% calc(100% - 30px));
+  background: linear-gradient(-0.48turn, #ffff1a 70%, #ff9704);
+  transition: height var(--drip-2--s) linear, clip-path var(--drip-2-s) linear;
+}
+.drip-3 {
+  clip-path: polygon(0% 0.70em, 100% 0%, 100% calc(100% - 30px), 100% calc(100% - 15px), 100% 100%, 0% 100%, 0% calc(100% - 15px), 0% calc(100% - 30px));
+  background: linear-gradient(0.48turn, #ffff1a 40%, #ff9704);
+  transition: height var(--drip-3--s) linear, clip-path var(--drip-3-s) linear;
+}
+
+.hexagon:hover ~ .drips > .drip-1.drip-hover {
+  clip-path: polygon(0% 0.70em, 100% 0%, 60% calc(100% - 35px), 100% calc(100% - 15px), 100% 100%, 0% 100%, 0% calc(100% - 15px), 40% calc(100% - 35px));
+  height: var(--drip-1);
+  transition: all var(--drip-1-s) ease-in;
+}
+.hexagon:hover ~ .drips > .drip-2.drip-hover {
+  clip-path: polygon(0% 0%, 100% 0.70em, 60% calc(100% - 35px), 100% calc(100% - 15px), 100% 100%, 0% 100%, 0% calc(100% - 15px), 40% calc(100% - 35px));
+  height: var(--drip-2);
+  transition: all var(--drip-2-s) ease-in;
+}
+.hexagon:hover ~ .drips > .drip-3.drip-hover {
+  clip-path: polygon(0% 0.70em, 100% 0%, 60% calc(100% - 35px), 100% calc(100% - 15px), 100% 100%, 0% 100%, 0% calc(100% - 15px), 40% calc(100% - 35px));
+  height: var(--drip-3);
+  transition: all var(--drip-3-s) ease-in;
+}
+
+:root {
+  --drip-1: 6em;
+  --drip-2: 10em;
+  --drip-3: 4em;
+  --drip-1-s: 0.6s;
+  --drip-1--s: 1.2s;
+  --drip-2-s: 1s;
+  --drip-2--s: 2s;
+  --drip-3-s: 0.4s;
+  --drip-3--s: 0.8s;
+  --game-s: 1.5s;
+  --game--s: 3s;
+}
+
+@media screen and (min-width:769px) {
+  .hexagon {
+    width: 10em;
+    height: 10em;
+  }
+  .base {
+    width: 10em;
+    height: 10em;
+  }
+}
+
+@media screen and (max-device-width:480px) {
+  .hexagon {
+    width: 7em;
+    height: 7em;
+  }
+  .base {
+    width: 7em;
+    height: 7em;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .list {
+    max-width: 50em;
+  }
+  .drip {
+    width: 19px;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .list {
+    max-width: 30em;
+  }
+  .drip {
+    width: 11px;
+  }
+}
